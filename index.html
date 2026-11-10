@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#141615" />
+    <meta name="theme-color" content="#080b16" />
     <meta
       name="description"
-      content="Muhammed Fayaz — a human eye and a data mind. Explore business intelligence, analytics, and the questions behind the work."
+      content="Muhammed Fayaz — Data Analyst & Business Intelligence professional in the UAE. Explore immersive work, analytics, and the questions behind the data."
     />
-    <title>Muhammed Fayaz — A human eye. A data mind.</title>
+    <title>Muhammed Fayaz — Data, with a human perspective.</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link
       rel="preload"
@@ -19,7 +19,8 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
-    <script src="signature.js" defer></script>
+    <link rel="stylesheet" href="experience.css" />
+    <script type="module" src="sculpture.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -41,7 +42,7 @@
         ></a>
         <nav id="navigation" aria-label="Main navigation">
           <a href="#projects">Selected work <sup>03</sup></a
-          ><a href="#about">The person</a><a href="#skills">The toolkit</a
+          ><a href="#about">About me</a><a href="#skills">Expertise</a
           ><a href="#contact"
             >Say hello
             <svg class="icon" aria-hidden="true"><use href="#arrow" /></svg
@@ -77,80 +78,126 @@
 
     <main id="main">
       <section class="hero shell" id="home" aria-labelledby="hero-title">
+        <div class="hero-atmosphere" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="kicker">
-            <span class="small-cross" aria-hidden="true">✳</span> DATA &
-            BUSINESS INTELLIGENCE
+            <span class="status-orbit" aria-hidden="true"></span> HI, I’M
+            MUHAMMED FAYAZ.
           </p>
-          <h1 id="hero-title">A human eye.<br />A <em>data mind.</em></h1>
+          <h1 id="hero-title">
+            I make data<br /><span class="gradient-text">make sense.</span>
+          </h1>
           <p class="hero-intro">
-            I’m Fayaz. I make sense of complex data.<br />Then help people do
-            something useful with it.
+            An analytical mind. A human perspective.<br />I connect data,
+            technology, and people to turn complex questions into clear business
+            decisions.
           </p>
-          <!-- This is a small working experiment: particles assemble into a readable signature. -->
-          <div class="signature-experiment">
-            <div class="signature-field">
-              <canvas
-                id="signal-field"
-                role="img"
-                aria-label="An interactive field of points that can assemble into the name FAYAZ"
-                >FAYAZ — finding patterns in the noise.</canvas
-              >
-            </div>
-            <div class="experiment-caption">
-              <span>A LITTLE CURIOSITY GOES A LONG WAY.</span
-              ><button id="pattern-toggle" type="button" aria-pressed="false">
-                <span class="pattern-label">Find the pattern</span
-                ><span class="circle-arrow" aria-hidden="true"
-                  ><svg class="icon"><use href="#arrow" /></svg
-                ></span>
-              </button>
-            </div>
+          <div class="hero-actions">
+            <a class="primary-link" href="#projects"
+              >Explore my work
+              <svg class="icon" aria-hidden="true">
+                <use href="#arrow" /></svg></a
+            ><a
+              class="secondary-link"
+              href="assets/Muhammed-Fayaz-CV.pdf"
+              download
+              >Get my CV
+              <svg class="icon" aria-hidden="true"><use href="#arrow" /></svg
+            ></a>
           </div>
-          <a class="text-link hero-link" href="#projects"
-            >A closer look at my work
-            <svg class="icon" aria-hidden="true">
-              <use href="#arrow-right" /></svg
-          ></a>
+          <div class="hero-specialties" aria-label="Core expertise">
+            <span>Power BI</span><i aria-hidden="true"></i><span>SQL</span
+            ><i aria-hidden="true"></i><span>ETL</span><i aria-hidden="true"></i
+            ><span>Analytics</span>
+          </div>
+          <a class="hero-location" href="#about"
+            ><svg class="icon location-icon" aria-hidden="true">
+              <use href="#arrow" />
+            </svg>
+            Based in the UAE. Built on curiosity.</a
+          >
         </div>
         <div class="hero-media">
-          <div class="portrait-offset" aria-hidden="true"></div>
-          <figure class="portrait-figure">
-            <img
-              class="portrait"
-              src="assets/muhammed-fayaz-portrait.png"
-              width="1254"
-              height="1254"
-              alt="Muhammed Fayaz wearing a navy suit beside the waterfront at night"
-              fetchpriority="high"
-            />
-            <figcaption>
-              <span>THE PERSON BEHIND THE NUMBERS</span
-              ><button id="portrait-toggle" type="button" aria-pressed="false">
-                A little color <span aria-hidden="true">+</span>
-              </button>
-            </figcaption>
-          </figure>
-          <span class="portrait-side-note"
-            >LESS ASSUMPTION. MORE CURIOSITY.</span
+          <!-- A real WebGL sculpture morphs between three forms. Its local SVG poster is the no-JS fallback. -->
+          <div
+            class="sculpture-stage"
+            role="group"
+            aria-label="Explore an interactive data sculpture"
           >
-          <div class="portrait-footnote">
-            <span class="handwritten"
-              >Always looking<br />for the bigger picture.</span
-            ><svg class="sketch-arrow" viewBox="0 0 100 65" aria-hidden="true">
-              <path d="M8 5q12 44 73 30m-14-8 17 7-11 17" />
-            </svg>
-            <p>
-              Currently connecting<br />data & people at
-              <strong>Safecare.</strong>
+            <div class="sculpture-aura" aria-hidden="true"></div>
+            <img
+              class="scene-poster"
+              src="assets/data-sculpture.svg"
+              alt=""
+              aria-hidden="true"
+              width="700"
+              height="650"
+            />
+            <canvas
+              id="sculpture-canvas"
+              tabindex="0"
+              role="img"
+              aria-label="Interactive 3D data sculpture. Drag horizontally or use arrow keys to rotate."
+              >A flowing 3D ribbon of connected data points.</canvas
+            >
+            <div class="sculpture-hint">
+              <span class="drag-icon" aria-hidden="true">↔</span> DRAG TO
+              EXPLORE <span class="hint-separator"></span> 3D DATA ART
+            </div>
+            <div class="hero-person">
+              <span class="person-photo"
+                ><img
+                  src="assets/muhammed-fayaz-portrait.png"
+                  alt=""
+                  width="56"
+                  height="56"
+              /></span>
+              <div>
+                <strong>Data is the beginning.</strong
+                ><span>People are the point.</span>
+              </div>
+              <span class="person-dot" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="sculpture-toolbar">
+            <div
+              class="sculpture-modes"
+              role="group"
+              aria-label="Choose a sculpture form"
+            >
+              <button
+                type="button"
+                data-sculpture="flow"
+                class="is-active"
+                aria-pressed="true"
+              >
+                Flow</button
+              ><button
+                type="button"
+                data-sculpture="network"
+                aria-pressed="false"
+              >
+                Network</button
+              ><button
+                type="button"
+                data-sculpture="signal"
+                aria-pressed="false"
+              >
+                Signal
+              </button>
+            </div>
+            <p id="sculpture-description" role="status" aria-live="polite">
+              Follow the flow. Find the connections.
             </p>
           </div>
         </div>
         <div class="hero-baseline">
-          <span>SELECTED THOUGHTS & WORK / 2022 — NOW</span
+          <span>DATA ANALYST & BUSINESS INTELLIGENCE PROFESSIONAL</span
           ><a href="#projects"
-            >KEEP EXPLORING <span aria-hidden="true">↓</span></a
-          >
+            >LET’S CONNECT THE DOTS
+            <svg class="icon" aria-hidden="true">
+              <use href="#arrow-right" /></svg
+          ></a>
         </div>
       </section>
 
@@ -165,7 +212,7 @@
           </div>
           <div class="section-heading">
             <h2 id="work-title">
-              Different questions.<br /><em>Useful answers.</em>
+              Curiosity in action.<br /><em>Impact in focus.</em>
             </h2>
             <p>
               Three explorations in people, health, and<br
@@ -527,11 +574,35 @@
             <span>02 — A LITTLE CONTEXT</span><span>THE HUMAN PART.</span>
           </div>
           <div class="about-grid">
-            <h2 id="about-title">
-              Good with data.<br /><em>Better with people.</em
-              ><span class="drawn-asterisk" aria-hidden="true">✳</span>
-            </h2>
+            <div class="about-portrait">
+              <figure class="portrait-figure">
+                <img
+                  class="portrait"
+                  src="assets/muhammed-fayaz-portrait.png"
+                  width="1254"
+                  height="1254"
+                  alt="Muhammed Fayaz wearing a navy suit beside the waterfront at night"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <span>THE PERSON BEHIND THE NUMBERS</span
+                  ><button
+                    id="portrait-toggle"
+                    type="button"
+                    aria-pressed="false"
+                  >
+                    Natural color <span aria-hidden="true">+</span>
+                  </button>
+                </figcaption>
+              </figure>
+              <span class="portrait-caption"
+                >MUHAMMED FAYAZ / ANALYST & PROBLEM SOLVER</span
+              >
+            </div>
             <div class="about-story">
+              <h2 id="about-title">
+                A human behind<br /><em>every insight.</em>
+              </h2>
               <p class="large-copy">
                 A computer science foundation.<br />A curiosity that doesn’t
                 switch off.
@@ -713,7 +784,9 @@
             ><span>GOOD WORK STARTS SOMEWHERE.</span>
           </div>
           <div class="contact-layout">
-            <h2 id="contact-title">Have a<br />good <em>question?</em></h2>
+            <h2 id="contact-title">
+              Let’s build<br />something <em>meaningful.</em>
+            </h2>
             <div class="contact-side">
               <p>
                 A data challenge, a new opportunity,<br />or a conversation
@@ -866,9 +939,10 @@
     </dialog>
     <noscript
       ><style>
+        #sculpture-canvas,
         .motion-toggle,
         .menu-toggle,
-        .signature-experiment,
+        .sculpture-modes,
         .skill-tabs,
         .contact-trigger {
           display: none !important;

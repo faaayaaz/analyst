@@ -113,16 +113,14 @@
   });
   matchMedia("(min-width:1000px)").addEventListener("change", closeMenu);
 
-  // The photo starts as an editorial monochrome image; a real button reveals its color on touch, too.
+  // The photo starts with a muted color treatment; a real button reveals its color on touch, too.
   $("#portrait-toggle").addEventListener("click", (event) => {
     const button = event.currentTarget;
     const color = button.getAttribute("aria-pressed") !== "true";
-    $(".hero-media").classList.toggle("is-color", color);
+    $(".about-portrait").classList.toggle("is-color", color);
     button.setAttribute("aria-pressed", String(color));
     button.replaceChildren(
-      document.createTextNode(
-        color ? "Back to monochrome " : "A little color ",
-      ),
+      document.createTextNode(color ? "Muted palette " : "Natural color "),
     );
     const symbol = document.createElement("span");
     symbol.setAttribute("aria-hidden", "true");
@@ -130,7 +128,7 @@
     button.append(symbol);
   });
   const photo = $(".portrait-figure");
-  $(".hero-media").addEventListener(
+  $(".about-portrait").addEventListener(
     "pointermove",
     (event) => {
       if (paused || !finePointer.matches) return;
@@ -139,7 +137,7 @@
     },
     { passive: true },
   );
-  $(".hero-media").addEventListener(
+  $(".about-portrait").addEventListener(
     "pointerleave",
     () => (photo.style.transform = ""),
   );

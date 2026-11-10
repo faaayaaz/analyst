@@ -1,63 +1,63 @@
-# Muhammed Fayaz — Portfolio
+# Muhammed Fayaz — A human eye. A data mind.
 
-A complete, responsive portfolio for a data analyst and business intelligence professional. Built with semantic HTML, CSS, and vanilla JavaScript. No framework, build step, API keys, or production dependencies.
+A personal portfolio for a UAE-based data analyst and business intelligence professional. The design takes the form of an editorial exhibit: expressive typography, a prominent portrait, selectable studies, and small working experiments. Built with HTML, CSS, and vanilla JavaScript, with no framework or build step.
 
-## Run locally
-
-From the existing repository checkout:
+## Run
 
 ```sh
-cd /workspace/analyst
 python3 -m http.server 8000
 ```
 
-Open port 8000 in your local browser. Any static HTTP server works; the site also supports opening `index.html` directly, though clipboard permission and download behavior vary with browser and protocol.
+Run the command from the folder containing `index.html`. You can use any static HTTP server or open `index.html` directly. Clipboard permissions and email-app handling depend on the browser; HTTPS or localhost is recommended.
+
+## What to explore
+
+- **Find the pattern:** a field of particles gathers into the name FAYAZ, then releases again. Pointer movement influences the particles; the same button works on touch and with a keyboard.
+- **A little color:** the opening portrait switches between its editorial monochrome treatment and color.
+- **The work exhibit:** select a project through click, hover, touch, or arrow keys. On phones, the selected preview moves directly below its title. Each study opens in a native dialog with the question, approach, and outcome.
+- **The sample data explorer:** work-arrangement controls and a metric selector update a chart, its headline figure, and its written observation. Selecting a bar inspects that month; selecting it again returns to the aggregate.
+- **The toolkit:** accessible tabs connect capabilities, tools, and concrete outputs, without invented proficiency scores.
+- **Write a note:** the contact invitation opens a native side-drawer dialog. Its form prepares an email draft; it does not deliver email through a server.
 
 ## Files
 
 ```text
-index.html                    Semantic page, form, and project dialog
-styles.css                    Design tokens, responsive layouts, and CSS VFX
-app.js                        Globe, filters, case studies, and interactions
-assets/avatar.svg             Original geometric wireframe avatar
+index.html                       Semantic page, exhibits, and dialogs
+styles.css                       Editorial design, responsive layouts, state transitions
+app.js                           Project/skill tabs, data explorer, navigation, contact
+signature.js                     Canvas particle typography and interaction
 assets/muhammed-fayaz-portrait.png  AI-edited portrait based on the supplied suit photo
-assets/projects.svg           Workforce dashboard concept illustration
-assets/skin-analysis.svg      Machine-learning concept illustration
-assets/smart-home.svg         Connected-home concept illustration
-assets/favicon.svg            MF brand icon
-assets/Muhammed-Fayaz-CV.pdf   Supplied CV download
+assets/projects.svg              Workforce concept illustration
+assets/skin-analysis.svg         Machine-learning concept illustration
+assets/smart-home.svg            Connected-home concept illustration
+assets/Muhammed-Fayaz-CV.pdf      Supplied CV download
+assets/fonts/                    Self-hosted Manrope font and its OFL license
 ```
 
-## Tools and patterns
+Other original illustration assets remain available in `assets/`. The portrait is an AI-edited version of the supplied image, not an untouched original. Replace its source and descriptive alt text if you prefer a different photograph.
 
-- **Canvas 2D:** an interactive 3D wireframe globe uses trigonometric projection and Fibonacci-distributed particles, with three orbiting light packets. Pointer movement tilts its perspective. Connect, Analyze, and Act buttons change its color and explain each step of the workflow on touch and desktop devices. Rendering is capped at approximately 30 fps and device pixel ratio at 2. The loop pauses outside the viewport or when the tab is hidden.
-- **CSS VFX:** a rotating neon headline, drifting aurora and grid, seamless tool marquee, floating labels, card glows and parallax tilt, animated project sweeps, skill-bar reveals, form focus trails, and click ripples. Project effects run while cards are in view. SVG artwork stays sharp at every viewport size.
-- **Responsive design:** mobile-first Grid and Flexbox; a compact phone hero and side-by-side tablet layout bring animation into the first screen. Layouts adapt at 600, 760, 900, 1050, 1100, and 1200 pixels. Form inputs use at least 16px text to avoid iOS focus zoom, and motion, menu, workflow, and filter controls provide 44px touch targets. Decorative pointer effects run only on devices with a fine pointer.
-- **Scroll interaction:** a sticky navigation bar highlights the current section and displays reading progress. Statistics count up once when they enter the viewport. IntersectionObserver reveals content once; filters animate their results for mouse, touch, and keyboard users. Content stays readable when JavaScript is disabled or IntersectionObserver is unavailable.
-- **Accessibility:** semantic landmarks, skip link, visible keyboard focus, explicit form labels, native required/email validation, live feedback, accessible filter state, and native dialog focus containment and Escape dismissal. A persistent Motion toggle pauses continuous effects; the browser's reduced-motion preference always takes priority. Reduced motion stops decorative animation and smooth scrolling, renders the globe as a static frame, and shows a complete static tool list. Headline words share a grid cell so the text never shifts layout; assistive technology reads a stable headline.
-- **Privacy:** no cookies, analytics, external fonts, or third-party runtime requests. Only the optional motion preference is saved in localStorage. Contact input is not stored or sent to a server.
+## Design and implementation
 
-## Customize
+Manrope is self-hosted; its font and license come from `@fontsource-variable/manrope` version 5.2.8. Georgia supplies the editorial serif accent through the system font stack. Runtime requests stay on the same origin: there are no external fonts, scripts, analytics, or cookies.
 
-1. Edit the biography, experience, statistics, links, and project cards in `index.html`.
-2. Edit the `projects` object in `app.js` for case-study details. Keep its keys aligned with each card's `data-project` attribute.
-3. Adjust the CSS `:root` tokens for the navy base and cyan, blue, purple, and magenta accents.
-4. The About section uses `assets/muhammed-fayaz-portrait.png`, an AI-edited portrait based on the supplied nighttime suit photograph. The source was supplied as a chat image; this edited asset is not an untouched copy of the original upload. Replace it with the original photo if you prefer, keeping the descriptive alt text and `portrait-avatar` class. The original geometric illustration remains available as `assets/avatar.svg`.
-5. Replace the concept illustrations with real project captures when available. They are labeled as concept visuals and do not imply live demos or published source code.
-6. Replace the CV file as needed. The bundled PDF is the original supplied document, including its personal/contact details; update that file if you want a different public version.
+Mobile-first Grid and Flexbox layouts expand at 600, 760, 1000, and 1200 pixels. Project preview order adapts to the selected item on smaller screens. Forms use 16px input text, and primary interactive controls have at least 44px touch height. Text and image effects use CSS; state changes use the Web Animations API where available. Native page scrolling remains intact.
 
-The content is based on the supplied CV. Skill bars are decorative emphasis rather than measured proficiency scores. Case studies describe academic work; the machine-learning research is not presented as a clinically validated product.
+The Canvas signature uses spring-like particle movement and offscreen text sampling, with a capped device pixel ratio and approximately 30fps rendering. It pauses outside the viewport and when the tab is hidden. The Motion control pauses decorative effects and saves only that preference in localStorage. System reduced-motion settings take priority and display a static signature. Native dialog focus containment, Escape dismissal, keyboard tabs, focus restoration, stable headings, explicit form labels, and live chart feedback support non-pointer use.
+
+## Sample data and content
+
+The explorer uses **illustrative data**, not private client data or verified research findings. The sample assumes 40 people and 20 workdays per month. For each month, workdays lost is `round(absence_rate × 40 × 20 / 100)`. The absence-rate headline is the six-month mean; the workdays headline is the six-month total. All chart values and observations come from those same arrays in `app.js`.
+
+The biography, experience, academic studies, and impact figures are based on the supplied CV. Project screenshots are explicitly labeled as concept illustrations. The skin-classification academic result is not presented as clinically validated. The original downloadable CV includes the supplied personal/contact details.
 
 ## Contact behavior
 
-The form prepares a `mailto:` draft containing the sender's name, email, topic, and message. The visitor must send it using a configured email application. It **does not deliver email by itself** and never claims a message was sent. An explicit draft link and direct email address remain available if an email app does not launch. Form values remain on the page.
+The form validates input, percent-encodes a `mailto:` subject and body, and opens the visitor's email app. The visitor must send the draft there. The page retains the form values, explains the delivery step, and provides a fallback link. It never claims a message has been sent and does not save contact input.
 
-For server-delivered messages, replace the submit handler with a real server or form-service endpoint and show success only after delivery is accepted. Keep provider credentials on the server. Clipboard copy requires browser permission and a secure context (HTTPS or localhost); otherwise the page displays the address to copy manually.
+For server-side delivery, connect a real form endpoint, keep credentials on the server, and show delivery success only after the endpoint accepts the message.
 
-## Deploy
+## Customize and deploy
 
-Upload `index.html`, `styles.css`, `app.js`, and `assets/` together to any static host, such as GitHub Pages, Netlify, or Cloudflare Pages. No build command is needed. Use the repository root as the publish directory. Relative assets also support deployment under a subdirectory.
+Edit the page copy in `index.html`, project and skill content in `app.js`, particle behavior in `signature.js`, and design tokens in `styles.css`. Upload all four source files and the complete `assets/` directory to a static host. No build command is required. Relative URLs support GitHub Pages subdirectory deployment.
 
-## Validation
-
-Passed 32 Playwright checks in headless Chromium, covering 320, 390, 600, 768, 1024, and 1440px viewports. Checks exercised actual Canvas frame changes, headline rotation without layout shifts, pause/resume and preference persistence, reduced motion, touch/desktop workflow controls, sticky navigation and progress, filters, dialogs, focus restoration, native validation, Unicode email-draft encoding, asset loading, and the downloadable CV. No JavaScript errors or failed asset requests were observed. Automated axe-core checks detected no WCAG A/AA violations at phone, tablet, and desktop widths; automated checks are not a complete accessibility audit. The development server is for local use; deployment and actual email delivery are separate steps.
+Passed 26 new Playwright checks in headless Chromium across 320, 390, 768, 1024, and 1440px viewports, exercising the interactions, sample calculations, keyboard focus, pause states, dialogs, email encoding, assets, and no-JavaScript fallback. Automated axe-core checks detected no A/AA violations on the page or open contact drawer at 320, 768, and 1440px. These checks do not establish complete accessibility or other-browser compatibility; manual keyboard, visual, and reduced-motion checks complement them.

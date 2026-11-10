@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" fill="none">
+  <defs>
+    <radialGradient id="bg"><stop stop-color="#27203c"/><stop offset="1" stop-color="#10121e"/></radialGradient>
+    <radialGradient id="cell"><stop stop-color="#e8c6ff" stop-opacity=".25"/><stop offset=".6" stop-color="#ba73fb" stop-opacity=".12"/><stop offset="1" stop-color="#8758df" stop-opacity="0"/></radialGradient>
+    <linearGradient id="line" x1="150" y1="100" x2="600" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#d5b1ff"/><stop offset="1" stop-color="#6b44a1"/></linearGradient>
+    <pattern id="grid" width="35" height="35" patternUnits="userSpaceOnUse"><path d="M35 0H0V35" stroke="#bba4dd" stroke-opacity=".05"/></pattern>
+  </defs>
+  <rect width="1000" height="600" fill="url(#bg)"/><rect width="1000" height="600" fill="url(#grid)"/>
+  <rect x="42" y="40" width="916" height="520" rx="12" stroke="#42374f" fill="#111520" fill-opacity=".55"/>
+  <path d="M42 104H958M632 104V560" stroke="#3a3348"/>
+  <path d="m68 70 9-8 9 8v11H68Z" stroke="#c9a0f2" stroke-width="1.5"/><path d="M77 66v12m-6-6h12" stroke="#c9a0f2"/>
+  <text x="101" y="77" fill="#ece4f5" font-family="Arial,sans-serif" font-size="18" font-weight="600">Dermascan <tspan fill="#84758f" font-size="12" font-weight="400">/ research</tspan></text>
+  <rect x="802" y="61" width="129" height="23" rx="11.5" fill="#322741"/><circle cx="816" cy="72" r="3" fill="#ba8ee1"/><text x="827" y="75" fill="#b6a0ca" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">CONCEPT STUDY</text>
+  <circle cx="338" cy="318" r="187" fill="url(#cell)"/>
+  <g stroke="#6f558c" stroke-opacity=".3"><circle cx="338" cy="318" r="174"/><circle cx="338" cy="318" r="147" stroke-dasharray="3 9"/><path d="M126 318H550M338 115V521" stroke-dasharray="3 9"/></g>
+  <g stroke="url(#line)" stroke-width="1.1" stroke-linejoin="round">
+    <path d="m216 240 42-50 72-23 78 18 49 43 29 74-15 80-50 50-70 25-76-23-57-53-21-69Z" fill="#aa6fd5" fill-opacity=".045"/>
+    <path d="m216 240 61 6-19-56 59 35 13-58 30 61 48-43 1 64 48-21-28 65 57 9-61 37 46 43-71-5 21 55-61-29-9 54-33-59-43 36 1-63-58 10 34-58-55-16 59-29Z"/>
+    <path d="m277 246 40-21 43 3 49 21 20 44-4 46-25 38-40 26-42-5-42-27-24-48 5-48Z"/>
+    <path d="m317 225 9 56-49-35-25 77 74-42-50 90 50-90-8 117 49-63-7 68 40-26-33-42 58 4-46-28 50-18-50 18 30-62-83 32 34-53 19 83-53-30 41 54-91 36 91-36-49 63"/>
+    <path d="m258 190 19 56-61-6 41 35-60 37 55 11-34 58 58-10-1 63 43-36 33 59 9-54 61 29-21-55 71 5-46-43 61-37-57-9 28-65-48 21-1-64-48 43-30-61-13 58Z" opacity=".65"/>
+  </g>
+  <g fill="#d9b2fc"><circle cx="277" cy="246" r="3"/><circle cx="317" cy="225" r="2.5"/><circle cx="360" cy="228" r="2.5"/><circle cx="409" cy="249" r="3"/><circle cx="429" cy="293" r="2.5"/><circle cx="425" cy="339" r="3"/><circle cx="400" cy="377" r="2.5"/><circle cx="360" cy="403" r="2.5"/><circle cx="318" cy="398" r="3"/><circle cx="276" cy="371" r="2.5"/><circle cx="252" cy="323" r="3"/><circle cx="257" cy="275" r="2.5"/><circle cx="326" cy="281" r="3"/><circle cx="379" cy="311" r="3"/><circle cx="367" cy="335" r="3"/></g>
+  <g stroke="#b78bdf" stroke-width="1.2"><path d="M140 184v-18h18M518 184v-18h-18M140 452v18h18M518 452v18h-18"/></g>
+  <text x="68" y="133" fill="#766985" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.6">NEURAL FEATURE MAPPING</text>
+  <text x="68" y="533" fill="#8f7aa2" font-family="Arial,sans-serif" font-size="9">CNN / TENSORFLOW</text><text x="444" y="533" fill="#6a6078" font-family="Arial,sans-serif" font-size="8">VISUAL REPRESENTATION</text>
+  <text x="659" y="140" fill="#776982" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.6">IMAGE CLASSIFICATION</text>
+  <text x="659" y="173" fill="#e6dcee" font-family="Arial,sans-serif" font-size="21">From pixels to patterns.</text>
+  <text x="659" y="197" fill="#8c7f9a" font-family="Arial,sans-serif" font-size="10">Exploring deep learning for dermoscopic analysis.</text>
+  <path d="M659 221H931" stroke="#342d41"/>
+  <g font-family="Arial,sans-serif"><text x="659" y="252" font-size="10" fill="#ae9bbb">01</text><text x="686" y="252" font-size="11" fill="#d7c9e2">Preprocess &amp; augment</text><text x="686" y="271" font-size="9" fill="#7c6f8c">Normalize. Transform. Build a stronger dataset.</text><text x="659" y="310" font-size="10" fill="#ae9bbb">02</text><text x="686" y="310" font-size="11" fill="#d7c9e2">Extract features</text><text x="686" y="329" font-size="9" fill="#7c6f8c">Learn visual structures through convolution.</text><text x="659" y="368" font-size="10" fill="#ae9bbb">03</text><text x="686" y="368" font-size="11" fill="#d7c9e2">Evaluate &amp; understand</text><text x="686" y="387" font-size="9" fill="#7c6f8c">Review precision, recall and model behavior.</text></g>
+  <rect x="658" y="419" width="273" height="107" rx="6" fill="#221d30" stroke="#3b304b"/>
+  <text x="674" y="442" fill="#af96c6" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">MODEL PIPELINE</text>
+  <g stroke="#6f5488"><rect x="674" y="459" width="58" height="29" rx="3"/><rect x="759" y="459" width="58" height="29" rx="3"/><rect x="844" y="459" width="70" height="29" rx="3"/><path d="M732 474h27m-4-4 4 4-4 4m62-4h27m-4-4 4 4-4 4"/></g>
+  <g font-family="Arial,sans-serif" font-size="8" fill="#bc9fd2" text-anchor="middle"><text x="703" y="477">INPUT</text><text x="788" y="477">CNN</text><text x="879" y="477">CLASSIFY</text></g>
+  <text x="674" y="510" fill="#70617f" font-family="Arial,sans-serif" font-size="8">Academic research · Not a clinical diagnostic tool</text>
+</svg>

@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#080d12" />
+    <meta
+      name="description"
+      content="Muhammed Fayaz — Data Analyst & Business Intelligence professional in the UAE. Turning complex data into clear, actionable decisions with SQL, Power BI, and analytics."
+    />
+    <title>Muhammed Fayaz — Data, made meaningful.</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Muhammed Fayaz home"
+          ><span class="brand-mark">m<span>f</span><i></i></span
+          ><span class="brand-name"
+            >MUHAMMED FAYAZ<span>DATA ANALYST & BI PROFESSIONAL</span></span
+          ></a
+        >
+        <!-- Motion can be paused independently of the device's reduced-motion preference. -->
+        <button
+          class="motion-toggle"
+          id="motion-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Pause animations"
+        >
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path class="pause-symbol" d="M7 5v10M13 5v10" />
+            <path class="play-symbol" d="m7 4 8 6-8 6Z" /></svg
+          ><span>MOTION ON</span>
+        </button>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="navigation"
+        >
+          <span></span><span></span>
+        </button>
+        <nav id="navigation" aria-label="Main navigation">
+          <a href="#about">About</a
+          ><a href="#projects">Work<span class="nav-count">03</span></a
+          ><a href="#skills">Expertise</a
+          ><a class="nav-contact" href="#contact"
+            >Let’s talk
+            <span aria-hidden="true"
+              ><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 19 19 5M5 5h14v14" /></svg></span
+          ></a>
+        </nav>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"></div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-aurora" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span class="status-dot"></span> MAKING COMPLEXITY CLEAR
+            </p>
+            <h1 id="hero-title">
+              Turning data<br />into <span class="sr-only">direction.</span
+              ><span class="word-rotator" aria-hidden="true"
+                ><span class="neon-text rotating-word is-active"
+                  >direction.</span
+                ><span class="neon-text rotating-word">clarity.</span
+                ><span class="neon-text rotating-word">impact.</span></span
+              >
+            </h1>
+            <p class="hero-intro">
+              I’m <strong>Muhammed Fayaz.</strong> I turn complex data into
+              clear insights and better business decisions.
+            </p>
+            <div class="hero-role">
+              <span class="role-bracket" aria-hidden="true">[</span
+              ><span>DATA ANALYST</span
+              ><span class="role-divider" aria-hidden="true">/</span
+              ><span>BI THINKER</span
+              ><span class="role-bracket" aria-hidden="true">]</span>
+            </div>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects"
+                >Explore my work
+                <span aria-hidden="true"
+                  ><svg
+                    class="arrow-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 19 19 5M5 5h14v14" /></svg></span></a
+              ><a
+                class="button button-text"
+                href="assets/Muhammed-Fayaz-CV.pdf"
+                download
+                >Download CV
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5" /></svg
+              ></a>
+            </div>
+            <p class="hero-location">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
+                <circle cx="12" cy="10" r="2" />
+              </svg>
+              Based in the UAE <span class="location-divider"></span> Built on
+              curiosity
+            </p>
+          </div>
+
+          <!-- A lightweight Canvas globe: points are projected from 3D without a library. -->
+          <div
+            class="hero-visual"
+            role="group"
+            aria-label="Explore my data-to-decision workflow"
+          >
+            <div class="visual-topline">
+              <span><i></i> INSIGHT ENGINE</span
+              ><span id="stage-tools">SQL / ETL / DATA QUALITY</span>
+            </div>
+            <div class="globe-halo"></div>
+            <canvas
+              id="data-globe"
+              role="img"
+              aria-label="A rotating wireframe globe with connected data points"
+            ></canvas>
+            <div class="orbital-label orbital-label-one">
+              <span class="mini-icon">⌘</span>
+              <div>
+                <b id="stage-input">RAW DATA</b
+                ><span id="stage-description">Connected possibilities</span>
+              </div>
+              <i></i>
+            </div>
+            <div class="orbital-label orbital-label-two">
+              <span class="mini-icon"
+                ><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 19 19 5M5 5h14v14" /></svg
+              ></span>
+              <div>
+                <b id="stage-output">CONNECTED SYSTEMS</b
+                ><span id="stage-result">The foundation for insight.</span>
+              </div>
+            </div>
+            <div class="globe-coordinates">
+              <span>25.2048° N</span><span>55.2708° E</span>
+            </div>
+            <div class="visual-caption">
+              <span class="tiny-cross">+</span
+              ><span>FROM INFORMATION TO INTELLIGENCE</span
+              ><span class="tiny-cross">+</span>
+            </div>
+            <div
+              class="insight-switcher"
+              role="group"
+              aria-label="Explore each step of my workflow"
+            >
+              <button
+                class="is-active"
+                data-stage="connect"
+                type="button"
+                aria-pressed="true"
+              >
+                <span>01</span> Connect</button
+              ><button data-stage="analyze" type="button" aria-pressed="false">
+                <span>02</span> Analyze</button
+              ><button data-stage="act" type="button" aria-pressed="false">
+                <span>03</span> Act
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-bottom">
+            <div class="hero-stats">
+              <div>
+                <strong
+                  ><span class="stat-number" data-count="2">2</span
+                  ><span>+</span></strong
+                >
+                <p>Years turning data<br />into decisions</p>
+              </div>
+              <div>
+                <strong
+                  ><span class="stat-number" data-count="7">7</span
+                  ><span>+</span></strong
+                >
+                <p>Healthcare client<br />integrations</p>
+              </div>
+              <div>
+                <strong
+                  ><span class="stat-number" data-count="35">35</span
+                  ><span>%</span></strong
+                >
+                <p>Faster decision-making<br />cycles</p>
+              </div>
+            </div>
+            <a class="scroll-cue" href="#about"
+              ><span>SCROLL TO DISCOVER</span
+              ><span class="scroll-icon">↓</span></a
+            >
+          </div>
+        </div>
+        <div class="tech-strip" aria-label="Core tools">
+          <div class="container tech-strip-inner">
+            <span class="tech-strip-label">THE TOOLS BEHIND THE INSIGHTS</span
+            ><span><b class="tool-symbol">▥</b> Power BI</span
+            ><span><b class="tool-symbol">⌘</b> SQL</span
+            ><span><b class="tool-symbol">⌗</b> Python</span
+            ><span><b class="tool-symbol">▦</b> Excel</span
+            ><span><b class="tool-symbol">✦</b> Tableau</span
+            ><span><b class="tool-symbol">⤨</b> ETL</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section about-section"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <div class="container">
+          <div class="section-topline">
+            <span class="eyebrow">01 / THE PERSON BEHIND THE DATA</span
+            ><span class="section-code">&lt;about_me&gt;</span>
+          </div>
+          <div class="about-grid">
+            <!-- Portrait VFX live in the frame: the photograph stays readable beneath the label gradients. -->
+            <div class="avatar-panel reveal">
+              <div class="avatar-corner corner-tl"></div>
+              <div class="avatar-corner corner-br"></div>
+              <div class="avatar-top">
+                <span>MF / HUMAN, NOT A BOT</span
+                ><span class="status-dot"></span>
+              </div>
+              <img
+                class="geometric-avatar portrait-avatar"
+                src="assets/muhammed-fayaz-portrait.png"
+                alt="Portrait of Muhammed Fayaz in a navy suit beside the waterfront at night"
+                width="430"
+                height="430"
+                loading="lazy"
+              />
+              <div class="avatar-caption">
+                <span>CURIOUS MIND.<br /><strong>ANALYTICAL DNA.</strong></span
+                ><span class="avatar-cross">+</span>
+              </div>
+              <div class="avatar-scan" aria-hidden="true"></div>
+            </div>
+            <div class="about-copy reveal">
+              <h2 id="about-title">
+                More than numbers.<br /><span class="muted"
+                  >A bigger picture.</span
+                >
+              </h2>
+              <p>
+                I’m a data analyst and business intelligence professional with a
+                computer science foundation and a simple belief: the best
+                insights make complex things feel clear.
+              </p>
+              <p>
+                At <strong>Safecare Technology</strong>, I turn business
+                questions into Power BI dashboards, reliable data models, and
+                practical recommendations. From healthcare integrations to
+                automated reporting, I bridge the gap between technical systems
+                and the people who use them.
+              </p>
+              <div class="about-facts">
+                <div>
+                  <span>BASED IN</span
+                  ><strong
+                    >United Arab Emirates
+                    <span aria-hidden="true"
+                      ><svg
+                        class="arrow-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 19 19 5M5 5h14v14" /></svg></span
+                  ></strong>
+                </div>
+                <div>
+                  <span>MY APPROACH</span
+                  ><strong>Curiosity → clarity → impact</strong>
+                </div>
+              </div>
+              <a
+                class="inline-link"
+                href="https://www.linkedin.com/in/faaayaaz"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Get to know me on LinkedIn
+                <span aria-hidden="true"
+                  ><svg
+                    class="arrow-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 19 19 5M5 5h14v14" /></svg></span
+              ></a>
+            </div>
+          </div>
+          <div class="experience-row reveal">
+            <div>
+              <span class="eyebrow">CURRENT CHAPTER</span
+              ><span class="experience-date">JUN 2024 — PRESENT</span>
+            </div>
+            <div>
+              <h3>Software & Business Intelligence Analyst</h3>
+              <p>Safecare Technology <span>·</span> Sharjah, UAE</p>
+            </div>
+            <span class="experience-symbol" aria-hidden="true"
+              ><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 19 19 5M5 5h14v14" /></svg
+            ></span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section projects-section"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="container">
+          <div class="section-topline">
+            <span class="eyebrow">02 / SELECTED EXPLORATIONS</span
+            ><span class="section-code">&lt;selected_work&gt;</span>
+          </div>
+          <div class="section-heading">
+            <div>
+              <h2 id="projects-title">
+                Built with purpose.<br /><span class="muted"
+                  >Backed by data.</span
+                >
+              </h2>
+            </div>
+            <p>
+              A few ways I’ve turned questions<br />into systems, stories, and
+              solutions.
+            </p>
+          </div>
+          <div class="project-toolbar">
+            <div
+              class="project-filters"
+              role="group"
+              aria-label="Filter projects"
+            >
+              <button
+                type="button"
+                class="filter active"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All work <span>03</span></button
+              ><button
+                type="button"
+                class="filter"
+                data-filter="analytics"
+                aria-pressed="false"
+              >
+                Analytics</button
+              ><button
+                type="button"
+                class="filter"
+                data-filter="ai"
+                aria-pressed="false"
+              >
+                AI & ML</button
+              ><button
+                type="button"
+                class="filter"
+                data-filter="iot"
+                aria-pressed="false"
+              >
+                IoT
+              </button>
+            </div>
+            <span class="project-toolbar-label"
+              >ACADEMIC PROJECTS / 2022—23</span
+            >
+          </div>
+          <p
+            class="sr-only"
+            id="filter-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <div class="projects-grid">
+            <article class="project-card reveal" data-category="analytics">
+              <button
+                type="button"
+                class="project-open"
+                data-project="workforce"
+                aria-label="View Workforce Intelligence case study"
+              >
+                <div class="project-image project-image-cyan">
+                  <span class="project-number">01 / ANALYTICS</span
+                  ><img
+                    src="assets/projects.svg"
+                    width="1000"
+                    height="600"
+                    loading="lazy"
+                    alt="Concept illustration of a workforce analytics dashboard"
+                  /><span class="project-image-label">CONCEPT VISUAL</span
+                  ><span class="project-arrow" aria-hidden="true"
+                    ><svg
+                      class="arrow-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 19 19 5M5 5h14v14" /></svg
+                  ></span>
+                </div>
+                <div class="project-info">
+                  <div class="project-tags">
+                    <span>POWER BI</span><span>EXCEL</span><span>ETL</span>
+                  </div>
+                  <h3>Workforce Intelligence</h3>
+                  <p>
+                    Finding the patterns behind people, productivity, and
+                    absenteeism.
+                  </p>
+                  <span class="project-detail-link"
+                    >Explore case study
+                    <span aria-hidden="true"
+                      ><svg
+                        class="arrow-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 19 19 5M5 5h14v14" /></svg></span
+                  ></span>
+                </div>
+              </button>
+            </article>
+            <article class="project-card reveal" data-category="ai">
+              <button
+                type="button"
+                class="project-open"
+                data-project="dermascan"
+                aria-label="View Skin Cancer Detection case study"
+              >
+                <div class="project-image project-image-purple">
+                  <span class="project-number">02 / MACHINE LEARNING</span
+                  ><img
+                    src="assets/skin-analysis.svg"
+                    width="1000"
+                    height="600"
+                    loading="lazy"
+                    alt="Concept illustration of a skin lesion classification interface"
+                  /><span class="project-image-label">CONCEPT VISUAL</span
+                  ><span class="project-arrow" aria-hidden="true"
+                    ><svg
+                      class="arrow-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 19 19 5M5 5h14v14" /></svg
+                  ></span>
+                </div>
+                <div class="project-info">
+                  <div class="project-tags">
+                    <span>PYTHON</span><span>TENSORFLOW</span><span>CNN</span>
+                  </div>
+                  <h3>Skin Cancer Detection</h3>
+                  <p>
+                    Exploring deep learning for earlier, more informed clinical
+                    decisions.
+                  </p>
+                  <span class="project-detail-link"
+                    >Explore case study
+                    <span aria-hidden="true"
+                      ><svg
+                        class="arrow-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 19 19 5M5 5h14v14" /></svg></span
+                  ></span>
+                </div>
+              </button>
+            </article>
+            <article class="project-card reveal" data-category="iot">
+              <button
+                type="button"
+                class="project-open"
+                data-project="smarthome"
+                aria-label="View Connected Living case study"
+              >
+                <div class="project-image project-image-blue">
+                  <span class="project-number">03 / CONNECTED SYSTEMS</span
+                  ><img
+                    src="assets/smart-home.svg"
+                    width="1000"
+                    height="600"
+                    loading="lazy"
+                    alt="Concept wireframe smart home with connected lighting nodes"
+                  /><span class="project-image-label">CONCEPT VISUAL</span
+                  ><span class="project-arrow" aria-hidden="true"
+                    ><svg
+                      class="arrow-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 19 19 5M5 5h14v14" /></svg
+                  ></span>
+                </div>
+                <div class="project-info">
+                  <div class="project-tags">
+                    <span>NODEMCU</span><span>BLYNK IOT</span><span>C++</span>
+                  </div>
+                  <h3>Connected Living</h3>
+                  <p>
+                    Bringing everyday spaces online through thoughtful
+                    automation.
+                  </p>
+                  <span class="project-detail-link"
+                    >Explore case study
+                    <span aria-hidden="true"
+                      ><svg
+                        class="arrow-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 19 19 5M5 5h14v14" /></svg></span
+                  ></span>
+                </div>
+              </button>
+            </article>
+          </div>
+          <div class="projects-footer">
+            <span><i></i> Always exploring what’s next.</span
+            ><a
+              class="inline-link"
+              href="https://github.com/faaayaaz"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Find me on GitHub
+              <span aria-hidden="true"
+                ><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 19 19 5M5 5h14v14" /></svg></span
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section skills-section"
+        id="skills"
+        aria-labelledby="skills-title"
+      >
+        <div class="container">
+          <div class="section-topline">
+            <span class="eyebrow">03 / MY TOOLKIT</span
+            ><span class="section-code">&lt;capabilities&gt;</span>
+          </div>
+          <div class="skills-layout">
+            <div class="skills-intro reveal">
+              <h2 id="skills-title">
+                The right tools.<br /><span class="muted"
+                  >The right questions.</span
+                >
+              </h2>
+              <p>
+                Technology is the toolkit. Knowing what to ask is where the real
+                work begins.
+              </p>
+              <a
+                class="inline-link"
+                href="assets/Muhammed-Fayaz-CV.pdf"
+                download
+                >View full experience <span aria-hidden="true">↓</span></a
+              >
+              <div class="skills-note">
+                <span aria-hidden="true">✳</span> CONTINUOUSLY LEARNING.<br />ALWAYS
+                CONNECTING THE DOTS.
+              </div>
+            </div>
+            <div class="skill-list">
+              <div
+                class="skill-group reveal"
+                style="--skill-color: var(--cyan); --fill: 94%"
+              >
+                <div class="skill-heading">
+                  <span class="skill-icon" aria-hidden="true">▥</span>
+                  <h3>Business intelligence</h3>
+                  <span class="skill-index">01</span>
+                </div>
+                <p>Power BI · DAX · Power Query · Tableau</p>
+                <div class="neon-bar" aria-hidden="true"><span></span></div>
+                <span class="skill-caption"
+                  >DASHBOARDS THAT DRIVE DECISIONS</span
+                >
+              </div>
+              <div
+                class="skill-group reveal"
+                style="--skill-color: var(--blue); --fill: 88%"
+              >
+                <div class="skill-heading">
+                  <span class="skill-icon" aria-hidden="true">⌘</span>
+                  <h3>Data engineering & SQL</h3>
+                  <span class="skill-index">02</span>
+                </div>
+                <p>MySQL · PostgreSQL · ETL · Data modeling</p>
+                <div class="neon-bar" aria-hidden="true"><span></span></div>
+                <span class="skill-caption"
+                  >RELIABLE FOUNDATIONS. USEFUL DATA.</span
+                >
+              </div>
+              <div
+                class="skill-group reveal"
+                style="--skill-color: var(--purple); --fill: 85%"
+              >
+                <div class="skill-heading">
+                  <span class="skill-icon" aria-hidden="true">⤨</span>
+                  <h3>Analysis & problem-solving</h3>
+                  <span class="skill-index">03</span>
+                </div>
+                <p>Excel · EDA · KPI reporting · Statistical modeling</p>
+                <div class="neon-bar" aria-hidden="true"><span></span></div>
+                <span class="skill-caption"
+                  >PATTERNS INTO PRACTICAL NEXT STEPS</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="credentials reveal">
+            <span class="eyebrow">ALWAYS ADDING TO THE TOOLKIT</span>
+            <div>
+              <span><b>G</b> Google Data Analytics</span
+              ><span
+                ><b class="ms-icon" aria-hidden="true">⊞</b> Microsoft Power
+                BI</span
+              ><span><b>pwc.</b> Power BI Simulation</span
+              ><span
+                ><b class="accenture-icon">&gt;</b> Accenture Analytics
+                Simulation</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container">
+          <div class="section-topline">
+            <span class="eyebrow">04 / WHAT’S NEXT?</span
+            ><span class="section-code">&lt;let’s_connect&gt;</span>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-copy reveal">
+              <p class="eyebrow">
+                <span class="status-dot"></span> GREAT WORK STARTS WITH A
+                CONVERSATION
+              </p>
+              <h2 id="contact-title">
+                Have a question?<br />Let’s find the<br /><span
+                  class="neon-text"
+                  >possibilities.</span
+                >
+              </h2>
+              <p>
+                A data challenge, a collaboration, or just a good conversation.
+                I’d love to hear what you’re working on.
+              </p>
+              <a class="contact-email" href="mailto:fayas818@gmail.com"
+                >fayas818@gmail.com
+                <span aria-hidden="true"
+                  ><svg
+                    class="arrow-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 19 19 5M5 5h14v14" /></svg></span
+              ></a>
+              <div class="social-links">
+                <a
+                  href="https://www.linkedin.com/in/faaayaaz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn
+                  <span aria-hidden="true"
+                    ><svg
+                      class="arrow-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 19 19 5M5 5h14v14" /></svg></span></a
+                ><a
+                  href="https://github.com/faaayaaz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub
+                  <span aria-hidden="true"
+                    ><svg
+                      class="arrow-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 19 19 5M5 5h14v14" /></svg></span></a
+                ><button id="copy-email" type="button">
+                  Copy email <span aria-hidden="true">⧉</span>
+                </button>
+              </div>
+              <span id="copy-status" class="copy-status" role="status"></span>
+            </div>
+            <!-- Native form validation remains available without JavaScript; submission opens an email draft. -->
+            <form
+              class="contact-form reveal"
+              id="contact-form"
+              action="mailto:fayas818@gmail.com"
+              method="get"
+            >
+              <div class="form-topline">
+                <span>LET’S MAKE A CONNECTION</span
+                ><span aria-hidden="true"
+                  ><svg
+                    class="arrow-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 19 19 5M5 5h14v14" /></svg
+                ></span>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Your name <span>*</span></label
+                  ><input
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="How should I call you?"
+                    required
+                    maxlength="100"
+                  />
+                </div>
+                <div class="field">
+                  <label for="email">Your email <span>*</span></label
+                  ><input
+                    id="email"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="you@company.com"
+                    required
+                    maxlength="254"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="interest">What’s on your mind?</label
+                ><select id="interest" name="subject">
+                  <option value="Let’s connect">Let’s connect</option>
+                  <option value="A project collaboration">
+                    A project collaboration
+                  </option>
+                  <option value="A career opportunity">
+                    A career opportunity
+                  </option>
+                  <option value="A data challenge">A data challenge</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Your message <span>*</span></label
+                ><textarea
+                  id="message"
+                  name="body"
+                  rows="4"
+                  placeholder="Tell me a little about your idea…"
+                  required
+                  minlength="10"
+                  maxlength="5000"
+                ></textarea>
+              </div>
+              <button class="button button-primary submit-button" type="submit">
+                Let’s start a conversation
+                <span aria-hidden="true"
+                  ><svg
+                    class="arrow-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 19 19 5M5 5h14v14" /></svg
+                ></span>
+              </button>
+              <p class="form-note">
+                Opens your email app with a draft. No data is stored.
+              </p>
+              <p
+                class="form-status"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+              <a
+                class="draft-fallback"
+                id="draft-fallback"
+                href="mailto:fayas818@gmail.com"
+                hidden
+                >Open email draft again
+                <svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 19 19 5M5 5h14v14" /></svg
+              ></a>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand-mark" href="#home" aria-label="Back to top"
+          >m<span>f</span><i></i
+        ></a>
+        <p>
+          © <span id="year">2026</span> Muhammed Fayaz
+          <span class="footer-dot">·</span> Designed for clarity. Built with
+          curiosity.
+        </p>
+        <a href="#home" class="back-top"
+          >BACK TO TOP <span aria-hidden="true">↑</span></a
+        >
+      </div>
+    </footer>
+
+    <!-- Native dialog gives case studies proper focus containment and Escape-to-close behavior. -->
+    <dialog
+      class="project-dialog"
+      id="project-dialog"
+      aria-labelledby="dialog-title"
+    >
+      <div class="dialog-inner">
+        <button
+          class="dialog-close"
+          type="button"
+          aria-label="Close case study"
+        >
+          ×</button
+        ><span class="eyebrow" id="dialog-category"></span>
+        <h2 id="dialog-title"></h2>
+        <p class="dialog-summary" id="dialog-summary"></p>
+        <div class="dialog-tags" id="dialog-tags"></div>
+        <div id="dialog-content"></div>
+        <p class="dialog-note">
+          Academic project · Concept illustration · Source code and live demo
+          are not published.
+        </p>
+        <a class="button button-primary" href="#contact" id="discuss-project"
+          >Let’s discuss this work
+          <span aria-hidden="true"
+            ><svg class="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 19 19 5M5 5h14v14" /></svg></span
+        ></a>
+      </div>
+    </dialog>
+    <noscript
+      ><style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .project-filters {
+          display: none;
+        }
+        .project-detail-link {
+          display: none;
+        }
+        .motion-toggle,
+        .insight-switcher {
+          display: none;
+        }
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+        }
+        .tech-strip-inner {
+          flex-wrap: wrap;
+        }
+        .neon-bar > span {
+          width: var(--fill);
+        }
+        .menu-toggle {
+          display: none;
+        }
+        nav {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+        .header-inner {
+          height: auto;
+          min-height: 76px;
+          flex-wrap: wrap;
+          padding-block: 15px;
+        }
+      </style>
+      <p class="noscript-note">
+        Enable JavaScript for animated visuals and full project case studies.
+        You can still browse the portfolio and contact me by email.
+      </p></noscript
+    >
+  </body>
+</html>

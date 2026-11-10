@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" fill="none">
+  <defs>
+    <radialGradient id="bg"><stop stop-color="#142b4b"/><stop offset="1" stop-color="#0a1425"/></radialGradient>
+    <linearGradient id="roof" x1="330" y1="166" x2="613" y2="363" gradientUnits="userSpaceOnUse"><stop stop-color="#398cff" stop-opacity=".12"/><stop offset="1" stop-color="#59b5ff" stop-opacity=".035"/></linearGradient>
+    <linearGradient id="wall" x1="338" y1="277" x2="603" y2="451" gradientUnits="userSpaceOnUse"><stop stop-color="#2362ad" stop-opacity=".1"/><stop offset="1" stop-color="#142e5a" stop-opacity=".3"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#70c5ff" stop-opacity=".35"/><stop offset="1" stop-color="#70c5ff" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" stroke="#75aaff" stroke-opacity=".04"/></pattern>
+  </defs>
+  <rect width="1000" height="600" fill="url(#bg)"/><rect width="1000" height="600" fill="url(#grid)"/>
+  <rect x="42" y="40" width="916" height="520" rx="12" stroke="#273f60" fill="#0b1627" fill-opacity=".45"/>
+  <path d="M42 105H958" stroke="#273f60"/>
+  <path d="m68 75 10-9 10 9v10H68Zm8 10v-8h5v8" stroke="#6fb9f9" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="103" y="80" fill="#dcecff" font-family="Arial,sans-serif" font-size="18" font-weight="600">A connected kind of home.</text>
+  <rect x="805" y="63" width="126" height="23" rx="11.5" fill="#172e4b"/><circle cx="819" cy="74" r="3" fill="#72c4ff"/><text x="830" y="77" fill="#88adcf" font-family="Arial,sans-serif" font-size="8" letter-spacing="1">CONCEPT VISUAL</text>
+  <ellipse cx="400" cy="424" rx="216" ry="83" fill="url(#glow)"/>
+  <g stroke="#355b8a" stroke-opacity=".45"><path d="m157 406 233-131 235 131-233 132Z"/><path d="m186 423 233-131M216 440 449 309M246 457 479 326M276 474 509 343M306 491 539 360M336 508 569 377M364 524 599 394M187 389 422 521M216 373 451 504M245 357 480 488M274 340 509 472M303 324 538 456M332 307 567 439M361 291 596 423"/></g>
+  <g stroke="#77b9f5" stroke-width="1.5" stroke-linejoin="round">
+    <path d="m260 318 150-87 152 87v112l-151 87-151-87Z" fill="url(#wall)"/>
+    <path d="m236 328 63-135 145-83 144 151-26 57-151 88Z" fill="url(#roof)"/>
+    <path d="m236 328 151 87 57-142-145-80M387 415l25 14 150-87M444 110v163l144-12M411 429v88M260 342l151 87 151-87"/>
+    <path d="m288 360 35 20v43l-35-20Zm56 32 35 20v43l-35-20ZM443 429l38-22v46l-38 22Zm63-36 28-16v44l-28 16Z" fill="#62bfff" fill-opacity=".12"/>
+    <path d="m288 382 35 20m-18-32v43m39 1 35 20m-18-33v43m82-3 38-22m-19-13v46m44-39 28-16m-14-8v43" stroke-opacity=".5"/>
+    <path d="m466 216 25 15v-43l-25-15Z" fill="#122c4b"/><path d="m466 173 15-8 25 15-15 8m15-8v43l-15 8"/>
+  </g>
+  <g stroke="#78baff" stroke-opacity=".55" stroke-dasharray="3 6"><path d="M388 223C387 141 238 131 176 203S134 358 242 361"/><path d="M548 378c64 43 115 12 142-46"/><path d="M483 205c59-84 164-62 203-17"/></g>
+  <g fill="#9ed6ff"><circle cx="388" cy="223" r="3"/><circle cx="242" cy="361" r="3"/><circle cx="548" cy="378" r="3"/><circle cx="483" cy="205" r="3"/></g>
+  <rect x="112" y="211" width="108" height="49" rx="7" fill="#10243b" stroke="#355d88"/><circle cx="135" cy="236" r="10" stroke="#71b3ee"/><path d="M132 240v-3c-6-4-1-10 3-10s9 6 3 10v3Zm1 3h4" stroke="#71b3ee" stroke-width="1.2"/>
+  <text x="153" y="233" fill="#d4e6f4" font-family="Arial,sans-serif" font-size="9">LIGHTING</text><text x="153" y="247" fill="#6d97bb" font-family="Arial,sans-serif" font-size="7">CONNECTED</text>
+  <rect x="665" y="170" width="264" height="309" rx="9" fill="#102037" stroke="#294969"/>
+  <text x="686" y="198" fill="#7099be" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.5">YOUR SPACE, IN SYNC</text>
+  <text x="686" y="231" fill="#dfedfb" font-family="Arial,sans-serif" font-size="23">Home control</text>
+  <text x="686" y="252" fill="#698aab" font-family="Arial,sans-serif" font-size="10">Small signals. Everyday possibilities.</text>
+  <path d="M686 273H908" stroke="#294969"/>
+  <rect x="686" y="292" width="222" height="58" rx="6" fill="#162f4a"/><circle cx="710" cy="321" r="11" stroke="#78bdff"/><path d="M710 312v8m-6-4a8 8 0 1 0 12 0" stroke="#78bdff" stroke-width="1.5"/>
+  <text x="733" y="317" fill="#cce3f7" font-family="Arial,sans-serif" font-size="10">Living room</text><text x="733" y="332" fill="#6d99c0" font-family="Arial,sans-serif" font-size="8">Lighting connected</text>
+  <rect x="864" y="313" width="29" height="16" rx="8" fill="#427fb3"/><circle cx="885" cy="321" r="5" fill="#bee5ff"/>
+  <rect x="686" y="362" width="222" height="58" rx="6" fill="#122940"/><path d="M703 390a11 11 0 0 1 16 0m-13 3a6 6 0 0 1 10 0m-8 3a3 3 0 0 1 6 0" stroke="#659bc9" stroke-width="1.4"/><circle cx="711" cy="399" r="1.2" fill="#659bc9"/>
+  <text x="733" y="387" fill="#cce3f7" font-family="Arial,sans-serif" font-size="10">NodeMCU</text><text x="733" y="402" fill="#6d99c0" font-family="Arial,sans-serif" font-size="8">Blynk IoT interface</text><circle cx="885" cy="391" r="4" fill="#75c6f5"/>
+  <text x="686" y="453" fill="#5d7b9b" font-family="Arial,sans-serif" font-size="8">ESP8266  /  C++  /  RELAY CONTROL</text>
+  <text x="68" y="533" fill="#6585a5" font-family="Arial,sans-serif" font-size="9" letter-spacing="1">SMART HOME AUTOMATION</text><text x="710" y="533" fill="#526e8a" font-family="Arial,sans-serif" font-size="8">ORIGINAL PROJECT VISUALIZATION</text>
+</svg>

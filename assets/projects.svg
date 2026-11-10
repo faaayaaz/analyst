@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1000" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#14272f"/><stop offset="1" stop-color="#071319"/></linearGradient>
+    <linearGradient id="area" x1="0" y1="300" x2="0" y2="530" gradientUnits="userSpaceOnUse"><stop stop-color="#32e8ca" stop-opacity=".22"/><stop offset="1" stop-color="#32e8ca" stop-opacity="0"/></linearGradient>
+    <linearGradient id="bar" x1="0" y1="300" x2="0" y2="530" gradientUnits="userSpaceOnUse"><stop stop-color="#72f5dc"/><stop offset="1" stop-color="#239185" stop-opacity=".5"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#88dddb" stroke-opacity=".035"/></pattern>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-opacity=".2"/></filter>
+  </defs>
+  <rect width="1000" height="600" fill="url(#bg)"/><rect width="1000" height="600" fill="url(#grid)"/>
+  <g filter="url(#shadow)"><rect x="45" y="40" width="910" height="520" rx="12" fill="#0c1c23" stroke="#29434a"/>
+  <path d="M45 52a12 12 0 0 1 12-12h112v520H57a12 12 0 0 1-12-12Z" fill="#0a171e"/>
+  <path d="M169 40V560" stroke="#29434a"/>
+  <rect x="67" y="65" width="24" height="24" rx="6" fill="#66f2d1"/><path d="m73 81 6-10 6 10m-9-4h6" stroke="#0a2224" stroke-width="1.5"/>
+  <text x="100" y="81" fill="#e2f3ed" font-family="Arial,sans-serif" font-size="12" font-weight="700">INSIGHT</text>
+  <rect x="60" y="123" width="94" height="33" rx="5" fill="#1c383d"/>
+  <g font-family="Arial,sans-serif" font-size="10" fill="#68858d"><text x="84" y="144" fill="#82efd9">Overview</text><text x="84" y="188">Workforce</text><text x="84" y="232">Attendance</text><text x="84" y="276">Reports</text><text x="84" y="524">Settings</text></g>
+  <g stroke="#668f94" stroke-width="1.3"><rect x="69" y="134" width="7" height="8" rx="1" stroke="#82efd9"/><circle cx="72.5" cy="180" r="3"/><path d="M68 188c0-6 9-6 9 0M68 224h9v9h-9zM68 267h8v10h-8zM70 270h4m-4 3h4"/></g>
+  <text x="201" y="83" fill="#68858d" font-family="Arial,sans-serif" font-size="9" letter-spacing="2">PEOPLE ANALYTICS</text>
+  <text x="201" y="115" fill="#e4efed" font-family="Arial,sans-serif" font-size="24" font-weight="600">Workforce overview</text>
+  <text x="201" y="137" fill="#6d8790" font-family="Arial,sans-serif" font-size="10">A clearer picture of the people behind the performance.</text>
+  <rect x="804" y="88" width="117" height="29" rx="5" stroke="#29434a"/><text x="819" y="106" fill="#a0b6bc" font-family="Arial,sans-serif" font-size="9">SAMPLE DATA</text><path d="m902 100 4 4 4-4" stroke="#6d8790"/>
+  <g stroke="#233e46" fill="#10242c"><rect x="201" y="166" width="226" height="102" rx="7"/><rect x="445" y="166" width="226" height="102" rx="7"/><rect x="689" y="166" width="232" height="102" rx="7"/></g>
+  <g font-family="Arial,sans-serif" font-size="10" fill="#79969e"><text x="220" y="191">Workforce distribution</text><text x="464" y="191">Attendance trends</text><text x="708" y="191">Team wellbeing</text></g>
+  <g stroke-linecap="round" stroke-width="5"><path d="M221 222h170" stroke="#203b43"/><path d="M221 222h119" stroke="#73efd5"/><path d="M221 238h170" stroke="#203b43"/><path d="M221 238h78" stroke="#388f93"/></g>
+  <path d="m465 242 20-10 19 3 20-19 20 8 20-17 19 5 20-12 21 4 27-7" stroke="#73efd5" stroke-width="2"/>
+  <circle cx="883" cy="219" r="22" stroke="#25424b" stroke-width="6"/><path d="M883 197a22 22 0 1 1-20 31" stroke="#73efd5" stroke-width="6" stroke-linecap="round"/>
+  <text x="708" y="226" fill="#ddede8" font-family="Arial,sans-serif" font-size="19">In balance</text>
+  <g stroke="#233e46" fill="#0f222a"><rect x="201" y="287" width="441" height="240" rx="7"/><rect x="660" y="287" width="261" height="240" rx="7"/></g>
+  <text x="221" y="315" fill="#cededc" font-family="Arial,sans-serif" font-size="12">Attendance over time</text><text x="681" y="315" fill="#cededc" font-family="Arial,sans-serif" font-size="12">Work arrangement</text>
+  <g stroke="#28414a" stroke-dasharray="3 5"><path d="M241 360h373M241 401h373M241 442h373M241 483h373M681 360h218M681 401h218M681 442h218M681 483h218"/></g>
+  <path d="m242 452 31-17 31 7 31-33 31 9 31-28 31 14 31-36 31 14 31-25 31 5 31-27 31 9V484H242Z" fill="url(#area)"/>
+  <path d="m242 452 31-17 31 7 31-33 31 9 31-28 31 14 31-36 31 14 31-25 31 5 31-27 31 9" stroke="#70efd4" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="m242 472 31-8 31-19 31 17 31-17 31 6 31-23 31 10 31-24 31 12 31-10 31 10 31-23" stroke="#317e88" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <g font-family="Arial,sans-serif" font-size="8" fill="#56757e"><text x="242" y="508">JAN</text><text x="309" y="508">FEB</text><text x="379" y="508">MAR</text><text x="449" y="508">APR</text><text x="519" y="508">MAY</text><text x="590" y="508">JUN</text><text x="698" y="508">OFFICE</text><text x="766" y="508">HYBRID</text><text x="838" y="508">REMOTE</text></g>
+  <g fill="url(#bar)"><rect x="699" y="396" width="39" height="87" rx="3"/><rect x="770" y="349" width="39" height="134" rx="3"/><rect x="841" y="420" width="39" height="63" rx="3"/></g>
+  <circle cx="592" cy="315" r="3" fill="#73efd5"/><text x="600" y="318" font-family="Arial,sans-serif" font-size="7" fill="#6c8b91">TREND</text>
+  </g>
+</svg>

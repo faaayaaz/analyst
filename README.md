@@ -64,3 +64,11 @@ For server-side delivery, connect a real form endpoint, keep credentials on the 
 Edit the page copy in `index.html`, project and skill content in `app.js`, scene behavior in `sculpture.js`, shared layouts in `styles.css`, and the combined visual treatment in `experience.css`. Upload those five files and the complete `assets/` and `vendor/` directories to a static host. No build command is required. Relative URLs support GitHub Pages subdirectory deployment.
 
 Passed 30 hybrid Playwright checks in headless Chromium across 320, 390, 768, 1024, and 1440px viewports, exercising the interactions, sample calculations, keyboard focus, pause states, dialogs, email encoding, assets, no-JavaScript poster, real WebGL output, forced Canvas fallback, and touch gestures. A further 13 focused scene checks covered rendering and control behavior. Automated axe-core checks cover the page and open contact drawer. These checks do not establish complete accessibility or other-browser compatibility; manual keyboard, visual, and reduced-motion checks complement them.
+
+## Animated portfolio guide
+
+`companion.js` and `companion.css` add a self-contained, procedural Three.js character inspired by the supplied suit-and-tie reference. It is a simplified model, not a rigged reconstruction of the supplied portrait. Include both files when deploying the site.
+
+The guide waves on arrival, stays in the viewport as the visitor scrolls, introduces the current section, and gestures toward the work section and selected projects. Wave replays the greeting. Voice is off by default; visitors can opt in to browser speech synthesis and mute it again. Voice availability and audible playback depend on the browser and installed voices. Speech uses the browser's configured synthesis service. Hide removes the guide and exposes a Show guide button. Reduced-motion preferences and the site's Motion control stop character animation. Hidden tabs stop rendering and speech. Where WebGL is unavailable, a portrait and the same text controls remain available.
+
+Onboarding validation after this addition covered actual WebGL initialization, section updates, wave, hide/show, reduced motion, mobile overflow, and the existing chart, tabs, study dialog, and sculpture controls. Voice opt-in and mute were checked with a mocked speech API; audible output needs a manual browser check.

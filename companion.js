@@ -33,7 +33,10 @@ let speaking = false;
 let hidden = false;
 let current = 'home';
 let waveUntil = 0;
-let talkUntil = 0;
+let speechStartedAt = 0;
+let wordBoundarySeen = false;
+let mouthOpenUntil = 0;
+let wordFrame = 'talk-a';
 let poseTimer;
 let speechGeneration = 0;
 
@@ -68,12 +71,18 @@ function updatePose() {
   if (!avatarReady || hidden || document.hidden) return;
   if (paused()) { setFrame(restingFrame()); return; }
   const now = performance.now();
-  if (now < waveUntil) {
+  if (speaking) {
+    // Speech events own the mouth clock. Word events provide closer timing;
+    // browsers without them use a cadence only while audio is actually playing.
+    const fallback = ['talk-a', 'neutral', 'talk-b', 'neutral'];
+    const frame = wordBoundarySeen
+      ? now < mouthOpenUntil ? wordFrame : 'neutral'
+      : fallback[Math.floor((now - speechStartedAt) / 140) % fallback.length];
+    setFrame(frame);
+    poseTimer = setTimeout(updatePose, 70);
+  } else if (now < waveUntil) {
     setFrame(Math.floor(now / 380) % 2 ? 'wave-a' : 'wave-b');
     poseTimer = setTimeout(updatePose, 380);
-  } else if (speaking || now < talkUntil) {
-    setFrame(Math.floor(now / 300) % 2 ? 'talk-a' : 'talk-b');
-    poseTimer = setTimeout(updatePose, 300);
   } else {
     setFrame(restingFrame());
   }
@@ -82,6 +91,8 @@ function cancelSpeech() {
   speechGeneration += 1;
   if (speechAvailable) speechSynthesis.cancel();
   speaking = false;
+  wordBoundarySeen = false;
+  mouthOpenUntil = 0;
 }
 function narrationVoice(voices) {
   // SpeechSynthesisVoice has no gender field. Match identifiable English male
@@ -110,10 +121,9 @@ function availableVoices() {
     changed();
   });
 }
-function say(text, { animate = true } = {}) {
+function say(text) {
   cancelSpeech();
   note.textContent = text;
-  talkUntil = animate && !hidden && !document.hidden ? performance.now() + 1500 : 0;
   updatePose();
   if (!voiceEnabled || hidden || document.hidden) return;
   const generation = speechGeneration;
@@ -125,15 +135,42 @@ function say(text, { animate = true } = {}) {
     utterance.lang = selected?.lang || 'en-GB';
     utterance.rate = 0.94;
     utterance.pitch = 0.88;
-    utterance.onstart = () => {
-      if (generation !== speechGeneration) return;
+    let finished = false;
+    const active = () => generation === speechGeneration && voiceEnabled
+      && !hidden && !document.hidden && !finished;
+    const startMouth = () => {
+      if (!active()) return;
       speaking = true;
+      waveUntil = 0;
+      speechStartedAt = performance.now();
+      wordBoundarySeen = false;
+      mouthOpenUntil = 0;
+      updatePose();
+    };
+    utterance.onstart = utterance.onresume = startMouth;
+    utterance.onpause = () => {
+      if (!active()) return;
+      speaking = false;
+      mouthOpenUntil = 0;
+      updatePose();
+    };
+    utterance.onboundary = (event) => {
+      if (!active() || !speaking || event.name !== 'word') return;
+      const index = Math.max(0, event.charIndex || 0);
+      const word = text.slice(index).match(/^\S+/)?.[0] || '';
+      if (!word) return;
+      wordBoundarySeen = true;
+      // The supplied art has two open-mouth shapes plus a closed smile, not a
+      // phoneme rig. Pulse on real word events instead of claiming exact lip sync.
+      wordFrame = /[ouw]/i.test(word) ? 'talk-b' : 'talk-a';
+      mouthOpenUntil = performance.now() + Math.min(240, Math.max(100, word.length * 35));
       updatePose();
     };
     utterance.onend = utterance.onerror = () => {
       if (generation !== speechGeneration) return;
+      finished = true;
       speaking = false;
-      talkUntil = 0;
+      mouthOpenUntil = 0;
       updatePose();
     };
     speechSynthesis.speak(utterance);
@@ -152,7 +189,7 @@ voice.addEventListener('click', () => {
   voice.setAttribute('aria-pressed', String(voiceEnabled));
   voice.textContent = voiceEnabled ? 'Voice on' : 'Voice off';
   if (voiceEnabled) say(note.textContent);
-  else { cancelSpeech(); talkUntil = 0; updatePose(); }
+  else { cancelSpeech(); updatePose(); }
 });
 wave.addEventListener('click', greet);
 host.querySelector('.guide-hide').addEventListener('click', () => {
@@ -160,7 +197,7 @@ host.querySelector('.guide-hide').addEventListener('click', () => {
   host.hidden = true;
   show.hidden = false;
   clearTimeout(poseTimer);
-  waveUntil = talkUntil = 0;
+  waveUntil = 0;
   cancelSpeech();
   show.focus();
 });
@@ -174,7 +211,7 @@ show.addEventListener('click', () => {
 });
 function motionChanged() {
   // Pausing clears pending gestures, so resuming does not replay a stale wave.
-  if (paused()) waveUntil = talkUntil = 0;
+  if (paused()) waveUntil = 0;
   updatePose();
 }
 reduced.addEventListener('change', motionChanged);
@@ -182,7 +219,7 @@ document.addEventListener('portfolio:motion', motionChanged);
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     clearTimeout(poseTimer);
-    waveUntil = talkUntil = 0;
+    waveUntil = 0;
     cancelSpeech();
   } else updatePose();
 });
@@ -196,7 +233,7 @@ function updateSection() {
   current = next;
   host.dataset.section = next;
   waveUntil = 0;
-  say(messages[next], { animate: next !== 'projects' && next !== 'contact' });
+  say(messages[next]);
 }
 let scrollPending = false;
 addEventListener('scroll', () => {
@@ -212,7 +249,7 @@ document.querySelectorAll('[data-project]').forEach((button) => {
     waveUntil = 0;
     const title = button.querySelector('strong')?.innerText.trim().replace(/\s+/g, ' ')
       || button.textContent.trim().replace(/\s+/g, ' ');
-    say(`Explore ${title.replace(/[.!?]+$/, '')}. Open the study to learn more.`, { animate: false });
+    say(`Explore ${title.replace(/[.!?]+$/, '')}. Open the study to learn more.`);
   });
 });
 
@@ -224,7 +261,7 @@ sheet.onload = () => {
   avatar.hidden = false;
   host.querySelector('.companion-poster').hidden = true;
   wave.disabled = false;
-  if (current === 'home') waveUntil = performance.now() + 3000;
+  if (current === 'home' && !speaking) waveUntil = performance.now() + 3000;
   updatePose();
 };
 sheet.onerror = () => {
@@ -233,5 +270,5 @@ sheet.onerror = () => {
   wave.title = 'The avatar image could not be loaded.';
 };
 sheet.src = new URL('./assets/fayaz-avatar-poses.png', import.meta.url).href;
-say(messages.home, { animate: false });
+say(messages.home);
 updateSection();

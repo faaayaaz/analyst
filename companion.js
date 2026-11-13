@@ -173,10 +173,13 @@ addEventListener('scroll', () => {
 }, { passive: true });
 document.querySelectorAll('[data-project]').forEach((button) => {
   button.addEventListener('click', () => {
+    // Account for scrolling into view before a queued scroll callback can
+    // replace this project's introduction with the generic section greeting.
+    updateSection();
     waveUntil = 0;
-    const title = button.querySelector('strong')?.textContent.trim().replace(/\s+/g, ' ')
+    const title = button.querySelector('strong')?.innerText.trim().replace(/\s+/g, ' ')
       || button.textContent.trim().replace(/\s+/g, ' ');
-    say(`Explore ${title}. Open the study to learn more.`, { animate: false });
+    say(`Explore ${title.replace(/[.!?]+$/, '')}. Open the study to learn more.`, { animate: false });
   });
 });
 

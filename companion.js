@@ -83,6 +83,33 @@ function cancelSpeech() {
   if (speechAvailable) speechSynthesis.cancel();
   speaking = false;
 }
+function narrationVoice(voices) {
+  // SpeechSynthesisVoice has no gender field. Match identifiable English male
+  // voices from Google, Microsoft and Apple rather than relying on the default.
+  const english = voices.filter((item) => /^en(?:[-_]|$)/i.test(item.lang));
+  const male = /\b(?:male|daniel|alex|fred|aaron|arthur|david|george|guy|james|mark|oliver|ryan|ravi|rishi|thomas|sean|evan|liam|matthew|joey|justin|brian|prabhat|andrew|eric|roger)\b/i;
+  const preferred = english.filter((item) => male.test(item.name));
+  preferred.sort((a, b) => Number(/^en[-_]GB$/i.test(b.lang)) - Number(/^en[-_]GB$/i.test(a.lang)));
+  return preferred[0] || english.find((item) => item.default) || english[0] || null;
+}
+function availableVoices() {
+  const voices = speechSynthesis.getVoices?.() || [];
+  if (voices.length || !speechSynthesis.addEventListener) return Promise.resolve(voices);
+  // Some browsers populate voices after page load. Give that first inventory a
+  // chance to arrive, without blocking narration indefinitely on unsupported devices.
+  return new Promise((resolve) => {
+    let timer;
+    const finish = () => {
+      clearTimeout(timer);
+      speechSynthesis.removeEventListener('voiceschanged', changed);
+      resolve(speechSynthesis.getVoices?.() || []);
+    };
+    const changed = () => { if (speechSynthesis.getVoices().length) finish(); };
+    speechSynthesis.addEventListener('voiceschanged', changed);
+    timer = setTimeout(finish, 900);
+    changed();
+  });
+}
 function say(text, { animate = true } = {}) {
   cancelSpeech();
   note.textContent = text;
@@ -90,21 +117,27 @@ function say(text, { animate = true } = {}) {
   updatePose();
   if (!voiceEnabled || hidden || document.hidden) return;
   const generation = speechGeneration;
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'en-GB';
-  utterance.rate = 0.95;
-  utterance.onstart = () => {
-    if (generation !== speechGeneration) return;
-    speaking = true;
-    updatePose();
-  };
-  utterance.onend = utterance.onerror = () => {
-    if (generation !== speechGeneration) return;
-    speaking = false;
-    talkUntil = 0;
-    updatePose();
-  };
-  speechSynthesis.speak(utterance);
+  availableVoices().then((voices) => {
+    if (generation !== speechGeneration || !voiceEnabled || hidden || document.hidden) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    const selected = narrationVoice(voices);
+    if (selected) utterance.voice = selected;
+    utterance.lang = selected?.lang || 'en-GB';
+    utterance.rate = 0.94;
+    utterance.pitch = 0.88;
+    utterance.onstart = () => {
+      if (generation !== speechGeneration) return;
+      speaking = true;
+      updatePose();
+    };
+    utterance.onend = utterance.onerror = () => {
+      if (generation !== speechGeneration) return;
+      speaking = false;
+      talkUntil = 0;
+      updatePose();
+    };
+    speechSynthesis.speak(utterance);
+  });
 }
 function greet() {
   waveUntil = performance.now() + 3000;

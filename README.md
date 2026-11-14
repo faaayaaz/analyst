@@ -65,10 +65,14 @@ Edit the page copy in `index.html`, project and skill content in `app.js`, scene
 
 Passed 30 hybrid Playwright checks in headless Chromium across 320, 390, 768, 1024, and 1440px viewports, exercising the interactions, sample calculations, keyboard focus, pause states, dialogs, email encoding, assets, no-JavaScript poster, real WebGL output, forced Canvas fallback, and touch gestures. A further 13 focused scene checks covered rendering and control behavior. Automated axe-core checks cover the page and open contact drawer. These checks do not establish complete accessibility or other-browser compatibility; manual keyboard, visual, and reduced-motion checks complement them.
 
-## Optional avatar introduction
+## Inline avatar and natural narration
 
-The About section has a **Meet my avatar** button. It opens a native dialog containing the supplied avatar artwork, a short written introduction, **Play introduction**, and a silent **Wave** button. There is no floating guide, scroll listener, automatic narration, or simulated lip-sync. The artwork remains still during audio playback; the earlier whole-figure pose swapping has been removed.
+The About section displays the supplied avatar directly, without a popup, card, or floating overlay. It is up to 460px wide on desktop and 380px on mobile. The source photo is retained as a no-JavaScript/image-load fallback. Artwork loads as visitors approach About.
 
-The pose sheet loads only when the panel is first opened. Play introduction prefers an available English male device voice with a measured pace and slightly lower pitch. Voice availability depends on the browser. Playback starts only from the explicit Play button and stops on Stop, close, Escape, or a hidden tab. Wave is a brief, manually requested animation that respects reduced-motion settings and the site's Motion control. Closing restores focus to its opener and the page's scroll behavior. If the pose sheet fails, the existing portrait remains available.
+**Hear my story** plays a self-hosted, natural male narration; **Stop introduction** stops and resets it. Nothing plays automatically. There is no browser speech synthesis, so the voice stays consistent across devices. The portrait stays still during audio playback: the image sheet does not contain the phoneme mouth shapes needed for natural lip synchronization. **Wave** remains a brief, explicitly requested gesture and respects reduced motion and the site's Motion control. Hidden tabs stop playback and gestures.
 
-Include `companion.js`, `companion.css`, and `assets/fayaz-avatar-poses.png` when deploying. No new framework, build step, or WebGL context is required. `companion.js` mounts after the existing application's dialogs have initialized, so the avatar panel owns its own focus and cleanup behavior.
+`assets/fayaz-introduction.mp3` is a 20.544-second mono MP3 at 24kHz, generated with Microsoft `en-US-AndrewMultilingualNeural` using edge-tts 7.3.1, rate −4%, normal pitch and volume. The generated file is self-hosted; visitors do not contact a speech service. Full decoding and peak/silence checks passed; audible listening was not performed during automated validation.
+
+Narration transcript: “Hey, I’m Fayaz. Thanks for stopping by. I’m a data analyst based in the UAE. I love turning messy data into clear stories, useful dashboards, and decisions that make a difference. Take a look around, explore my projects, and if something sparks an idea, let’s talk.”
+
+Deploy `companion.js`, `companion.css`, `assets/fayaz-avatar-poses.png`, and `assets/fayaz-introduction.mp3` with the rest of the static site. No build step, extra WebGL context, secret, or live speech API is required.
